@@ -1,42 +1,69 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package org.usfirst.frc.team3596.robot;
+
+
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	//// CREATING BUTTONS
-	// One type of button is a joystick button which is any button on a
-	//// joystick.
-	// You create one by telling it which joystick it's on and which button
-	// number it is.
-	// Joystick stick = new Joystick(port);
-	// Button button = new JoystickButton(stick, buttonNumber);
+	private Joystick joy = new Joystick(0);
 
-	// There are a few additional built in buttons you can use. Additionally,
-	// by subclassing Button you can create custom triggers and bind those to
-	// commands the same as any other Button.
+	JoystickButton X = new JoystickButton(joy, 1);
+	JoystickButton A = new JoystickButton(joy, 2);
+	JoystickButton B = new JoystickButton(joy, 3);
+	JoystickButton Y = new JoystickButton(joy, 4);
+	JoystickButton LB = new JoystickButton(joy, 5);
+	JoystickButton RB = new JoystickButton(joy, 6);
+	JoystickButton LT = new JoystickButton(joy, 7);
+	JoystickButton RT = new JoystickButton(joy, 8);
+	JoystickButton BACK = new JoystickButton(joy, 9);
+	JoystickButton START = new JoystickButton(joy, 10);
+	JoystickButton LSB = new JoystickButton(joy, 11);
+	JoystickButton RSB = new JoystickButton(joy, 12);
+	
+	double LEFT_X_AXIS = joy.getRawAxis(0);
+	double LEFT_Y_AXIS = joy.getRawAxis(1);
+	double RIGHT_X_AXIS = joy.getRawAxis(2);
+	double RIGHT_Y_AXIS = joy.getRawAxis(3);
 
-	//// TRIGGERING COMMANDS WITH BUTTONS
-	// Once you have a button, it's trivial to bind it to a button in one of
-	// three ways:
+	public OI(){
+		// Put Command triggers Here
+	}
 
-	// Start the command when the button is pressed and let it run the command
-	// until it is finished as determined by it's isFinished method.
-	// button.whenPressed(new ExampleCommand());
+	public Joystick getJoystick() {
+		return joy;
+	}
 
-	// Run the command while the button is being held down and interrupt it once
-	// the button is released.
-	// button.whileHeld(new ExampleCommand());
+	public void log(){
 
-	// Start the command when the button is released and let it run the command
-	// until it is finished as determined by it's isFinished method.
-	// button.whenReleased(new ExampleCommand());
+		SmartDashboard.putBoolean("X Button", X.get());
+		SmartDashboard.putBoolean("A Button", A.get());
+		SmartDashboard.putBoolean("B Button", B.get());
+		SmartDashboard.putBoolean("Y Button", Y.get());
+		SmartDashboard.putBoolean("LB Button", LB.get());
+		SmartDashboard.putBoolean("RB Button", RB.get());
+		SmartDashboard.putBoolean("LT Button", LT.get());
+		SmartDashboard.putBoolean("RT Button", RT.get());
+		SmartDashboard.putBoolean("BACK Button", BACK.get());
+		SmartDashboard.putBoolean("START Button", START.get());
+		SmartDashboard.putBoolean("LSB Button", LSB.get());
+		SmartDashboard.putBoolean("RSB Button", RSB.get());
+		
+		SmartDashboard.putNumber("Left X Axis", LEFT_X_AXIS);
+		SmartDashboard.putNumber("Left Y Axis", LEFT_Y_AXIS);
+		SmartDashboard.putNumber("Right X Axis", RIGHT_X_AXIS);
+		SmartDashboard.putNumber("Right Y Axis", RIGHT_Y_AXIS);
+		
+
+
+	}
+
+
+
+
 }
