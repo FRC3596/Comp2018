@@ -2,6 +2,9 @@ package org.usfirst.frc.team3596.robot;
 
 
 
+import org.usfirst.frc.team3596.robot.commands.motorRun;
+import org.usfirst.frc.team3596.robot.commands.stopMotor;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -33,6 +36,8 @@ public class OI {
 
 	public OI(){
 		// Put Command triggers Here
+		X.whenActive(new motorRun());
+		X.whenInactive(new stopMotor());
 	}
 
 	public Joystick getJoystick() {

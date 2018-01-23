@@ -10,28 +10,32 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Drivetrain extends Subsystem {
 
-	Encoder enc1 = new Encoder(0,1);
-	Encoder enc2 = new Encoder(2,3);
-
+	Encoder leftEncoder = new Encoder(0,1);
+	Encoder rightEncoder = new Encoder(2,3);
+	SpeedControllerGroup testMotors = new SpeedControllerGroup(new WPI_TalonSRX(5), new WPI_TalonSRX(6));
 	SpeedControllerGroup leftMotors = new SpeedControllerGroup(new WPI_TalonSRX(1),new WPI_TalonSRX(2));
 	SpeedControllerGroup rightMotors = new SpeedControllerGroup(new WPI_TalonSRX(3),new WPI_TalonSRX(4));
-
 	DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
 	public Drivetrain(){
-		enc1.setDistancePerPulse(0.5);
-		enc2.setDistancePerPulse(0.5);
+		leftEncoder.setDistancePerPulse(0.5);
+		rightEncoder.setDistancePerPulse(0.5);
 		
 		
 	}
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void drive(Joystick joy) {
-		drive.arcadeDrive(joy.getY(), joy.getRawAxis(2));
+		drive.arcadeDrive(joy.getRawAxis(1), joy.getRawAxis(2));
 	}
+	public void motor(double spin){
+		testMotors.set(spin);
+	}
+	
 	public void drive(double move, double rotate) {
 		drive.arcadeDrive(move, rotate);
 	}
@@ -42,7 +46,11 @@ public class Drivetrain extends Subsystem {
 		//setDefaultCommand(new MySpecialCommand());
 	}
 	public void encoderReset(){
-		enc1.reset();
-		enc2.reset();
+		leftEncoder.reset();
+		rightEncoder.reset();
+	}
+	public void log(){
+		SmartDashboard.putNumber("Left Encoder", leftEncoder.getDistance());
+		SmartDashboard.putNumber("Right Encoder", rightEncoder.getDistance());
 	}
 }
