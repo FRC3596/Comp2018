@@ -16,7 +16,7 @@ public class Drivetrain extends Subsystem {
 
 	Encoder leftEncoder = new Encoder(0,1);
 	Encoder rightEncoder = new Encoder(2,3);
-	SpeedControllerGroup testMotors = new SpeedControllerGroup(new WPI_TalonSRX(5), new WPI_TalonSRX(6));
+
 	SpeedControllerGroup leftMotors = new SpeedControllerGroup(new WPI_TalonSRX(1),new WPI_TalonSRX(2));
 	SpeedControllerGroup rightMotors = new SpeedControllerGroup(new WPI_TalonSRX(3),new WPI_TalonSRX(4));
 	DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
@@ -32,10 +32,7 @@ public class Drivetrain extends Subsystem {
 	public void drive(Joystick joy) {
 		drive.arcadeDrive(joy.getRawAxis(1), joy.getRawAxis(2));
 	}
-	public void motor(double spin){
-		testMotors.set(spin);
-	}
-	
+
 	public void drive(double move, double rotate) {
 		drive.arcadeDrive(move, rotate);
 	}
