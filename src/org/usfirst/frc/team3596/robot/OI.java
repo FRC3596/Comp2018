@@ -2,6 +2,8 @@ package org.usfirst.frc.team3596.robot;
 
 
 
+import org.usfirst.frc.team3596.robot.commands.ConveyorBkwd;
+import org.usfirst.frc.team3596.robot.commands.ConveyorFwd;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -31,8 +33,11 @@ public class OI {
 	double RIGHT_X_AXIS = joy.getRawAxis(2);
 	double RIGHT_Y_AXIS = joy.getRawAxis(3);
 
+
 	public OI(){
 		// Put Command triggers Here
+		X.toggleWhenActive(new ConveyorFwd());
+		B.toggleWhenActive(new ConveyorBkwd());
 
 	}
 
