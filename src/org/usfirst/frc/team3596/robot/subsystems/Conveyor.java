@@ -15,13 +15,15 @@ public class Conveyor extends Subsystem {
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
-    }
+    	ConveyorL.set(0);
+    	ConveyorR.set(0);    }
     public void Forward(){
-    	
+    	ConveyorL.set(1);
+    	ConveyorR.set(-1);
     }
     public void Backward(){
-    	
+    	ConveyorL.set(-1);
+    	ConveyorR.set(1);
     }
 }
 
