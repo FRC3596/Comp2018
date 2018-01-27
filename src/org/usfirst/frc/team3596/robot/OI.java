@@ -2,6 +2,9 @@ package org.usfirst.frc.team3596.robot;
 
 
 
+import org.usfirst.frc.team3596.robot.commands.ElevatorDown;
+import org.usfirst.frc.team3596.robot.commands.ElevatorUp;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -33,6 +36,8 @@ public class OI {
 
 	public OI(){
 		// Put Command triggers Here
+		LB.whenPressed(new ElevatorUp());
+		RB.whenPressed(new ElevatorDown());
 
 	}
 
