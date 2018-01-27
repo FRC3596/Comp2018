@@ -38,8 +38,9 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		drivetrain = new Drivetrain();
-		m_oi = new OI();
 		conveyor = new Conveyor();
+		m_oi = new OI();
+
 	
 		//m_autonomousCommand = new Autonomous();
 		//SmartDashboard.putData("Auto mode", m_chooser);
