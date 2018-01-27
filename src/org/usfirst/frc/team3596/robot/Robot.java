@@ -8,7 +8,6 @@
 package org.usfirst.frc.team3596.robot;
 
 import org.usfirst.frc.team3596.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team3596.robot.subsystems.Elevator;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
