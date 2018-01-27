@@ -24,7 +24,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static Elevator elevator;
 	public static Drivetrain drivetrain;
 	public static OI m_oi;
 
@@ -38,7 +37,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		drivetrain = new Drivetrain();
-		elevator = new Elevator();
 		m_oi = new OI();
 	
 		//m_autonomousCommand = new Autonomous();
@@ -127,7 +125,6 @@ public class Robot extends TimedRobot {
 	public void testPeriodic() {
 	}
 	public void log(){
-		elevator.log();
 		drivetrain.log();
 		m_oi.log();
 	}
