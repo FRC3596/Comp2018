@@ -36,9 +36,6 @@ public class OI {
 
 	public OI(){
 		// Put Command triggers Here
-		LB.whenPressed(new ElevatorUp());
-		RB.whenPressed(new ElevatorDown());
-
 	}
 
 	public Joystick getJoystick() {
