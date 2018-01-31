@@ -17,7 +17,7 @@ public class ElevatorDown extends Command {
     protected void initialize() {
     	if(Robot.elevator.bottomCheck())
     		end();
-    	Robot.elevator.ElevatorDown();
+    	Robot.elevator.ElevatorDownward();
     }
 
      // Make this return true when this Command no longer needs to run execute()

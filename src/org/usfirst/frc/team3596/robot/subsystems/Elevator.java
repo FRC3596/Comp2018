@@ -24,11 +24,11 @@ public class Elevator extends Subsystem {
 		// Set the default command for a subsystem here.
 		//setDefaultCommand(new MySpecialCommand());
 	}
-	public void ElevatorDown(){
+	public void ElevatorDownward(){
 		mainMotor.set(-1);
 	}
 	
-	public void ElevatorUp(){
+	public void ElevatorUpward(){
 		mainMotor.set(1);
 	}
 	
