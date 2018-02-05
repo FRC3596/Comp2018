@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class Elevator extends Subsystem {
-
-	Spark mainMotor = new Spark(0);
+	Spark leftMotor = new Spark(0);
+	Spark rightMotor = new Spark(1);
 
 	DigitalInput top = new DigitalInput(0);
 	DigitalInput bottom = new DigitalInput(1);
@@ -25,17 +25,20 @@ public class Elevator extends Subsystem {
 		//setDefaultCommand(new MySpecialCommand());
 	}
 	public void ElevatorDownward(){
-		mainMotor.set(-1);
+		leftMotor.set(-.5);
+		rightMotor.set(-.5);
 	}
-	
+
 	public void ElevatorUpward(){
-		mainMotor.set(1);
+		leftMotor.set(.5);
+		rightMotor.set(.5);
 	}
-	
+
 	public void ElevatorStop(){
-		mainMotor.set(0);
+		leftMotor.set(0);
+		rightMotor.set(0);
 	}
-	
+
 	public boolean isSwitchTrigger(){
 		return (top.get() || bottom.get() || middle.get());
 	}
