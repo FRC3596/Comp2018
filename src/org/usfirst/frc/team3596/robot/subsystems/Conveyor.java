@@ -10,23 +10,24 @@ public class Conveyor extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	Spark ConveyorL = new Spark(0);
-	Spark ConveyorR = new Spark(1);
+	Spark Conveyor = new Spark(0);
+	
+	Spark RollerLeft = new Spark(1);
+	Spark RollerRight = new Spark(2);
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
     	   }
     public void Forward(){
-    	ConveyorL.set(1);
-    	ConveyorR.set(-1);
+    	Conveyor.set(1);
     }
     public void Backward(){
-    	ConveyorL.set(-1);
-    	ConveyorR.set(1);
+    	Conveyor.set(-1);
+    	RollerRight.set(.5);
+    	RollerLeft.set(-.5);
     }
     public void Stop(){
-    	ConveyorL.set(0);
-    	ConveyorR.set(0); 
+    	Conveyor.set(0);
     }
 }
 

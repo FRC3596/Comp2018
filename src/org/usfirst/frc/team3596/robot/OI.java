@@ -36,8 +36,8 @@ public class OI {
 
 	public OI(){
 		// Put Command triggers Here
-		X.toggleWhenActive(new ConveyorFwd());
-		B.toggleWhenActive(new ConveyorBkwd());
+		B.toggleWhenActive(new ConveyorFwd());
+		X.toggleWhenActive(new ConveyorBkwd());
 
 	}
 
