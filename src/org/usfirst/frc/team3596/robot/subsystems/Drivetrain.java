@@ -30,11 +30,11 @@ public class Drivetrain extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void drive(Joystick joy) {
-		drive.arcadeDrive(joy.getRawAxis(1), joy.getRawAxis(2));
+		drive.tankDrive(-joy.getRawAxis(1), -joy.getRawAxis(3));
 	}
 
 	public void drive(double move, double rotate) {
-		drive.arcadeDrive(move, rotate);
+		drive.tankDrive(move, rotate);
 	}
 
 	public void initDefaultCommand() {
