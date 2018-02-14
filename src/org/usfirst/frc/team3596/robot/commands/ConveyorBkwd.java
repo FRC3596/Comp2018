@@ -9,18 +9,19 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class ConveyorBkwd extends Command {
 
+	
     public ConveyorBkwd() {
     	requires(Robot.conveyor);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
+    	Robot.conveyor.Backward();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.conveyor.Backward();
+    	
     	
     }
 
