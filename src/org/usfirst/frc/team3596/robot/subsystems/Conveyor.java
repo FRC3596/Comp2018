@@ -28,6 +28,8 @@ public class Conveyor extends Subsystem {
     }
     public void Stop(){
     	Conveyor.set(0);
+    	RollerRight.set(0);
+    	RollerLeft.set(0);
     }
 }
 
