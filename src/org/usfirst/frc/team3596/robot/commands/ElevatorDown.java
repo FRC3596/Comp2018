@@ -15,15 +15,17 @@ public class ElevatorDown extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	if(Robot.elevator.bottomCheck())
-    		end();
+    	
+    }
+    
+    protected void execute(){
+
     	Robot.elevator.ElevatorDownward();
     }
 
      // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        //return Robot.elevator.isSwitchTrigger();
-    	return false;
+        return Robot.elevator.middleCheck();//||Robot.elevator.bottomCheck();
     }
 
     // Called once after isFinished returns true

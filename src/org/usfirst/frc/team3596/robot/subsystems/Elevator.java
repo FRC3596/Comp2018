@@ -10,14 +10,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class Elevator extends Subsystem {
-	Spark leftMotor = new Spark(0);
-	Spark rightMotor = new Spark(1);
-
 	DigitalInput top = new DigitalInput(0);
 	DigitalInput bottom = new DigitalInput(1);
 	DigitalInput middle = new DigitalInput(2);
 	
-	SpeedControllerGroup elevatorMotor = new SpeedControllerGroup(leftMotor, rightMotor);
+	SpeedControllerGroup elevatorMotor = new SpeedControllerGroup(new Spark(0), new Spark(1));
 	
 
 
@@ -41,19 +38,20 @@ public class Elevator extends Subsystem {
 		elevatorMotor.set(0);
 	}
 
-	public boolean isSwitchTrigger(){
-		return (top.get() || bottom.get() || middle.get());
-	}
+	
 	public void log(){
-		SmartDashboard.putBoolean("TOP SWITCH",top.get());
-		SmartDashboard.putBoolean("BOTTOM SWITCH", bottom.get());
-		SmartDashboard.putBoolean("MIDDLE SWITCH", middle.get());
+		SmartDashboard.putBoolean("TOP SWITCH",!top.get());
+		SmartDashboard.putBoolean("BOTTOM SWITCH", !bottom.get());
+		SmartDashboard.putBoolean("MIDDLE SWITCH", !middle.get());
+	}
+	public boolean middleCheck(){
+		return !bottom.get() ;
 	}
 	public boolean topCheck(){
-		return top.get();
+		return !top.get();
 	}
 	public boolean bottomCheck(){
-		return bottom.get();
+		return !bottom.get();
 	}
 
 }
