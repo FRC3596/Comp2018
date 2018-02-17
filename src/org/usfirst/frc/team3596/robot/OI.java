@@ -38,15 +38,9 @@ public class OI {
 	boolean topTrigger = Robot.elevator.topCheck();
 	boolean bottomTrigger = Robot.elevator.bottomCheck();
 	public OI(){
-		// Put Command triggers Here
-		//if(topTrigger)
-			//LB.whenPressed(new ElevatorStop());
-		//else
-			LB.whenActive(new ElevatorUp());
-		//if(bottomTrigger)
-			//RB.whenPressed(new ElevatorStop());
-		//else
-			RB.whenActive(new ElevatorDown());
+
+		LB.whenActive(new ElevatorUp());
+		RB.whenActive(new ElevatorDown());
 
 		LB.whenInactive(new ElevatorStop());
 		RB.whenInactive(new ElevatorStop());

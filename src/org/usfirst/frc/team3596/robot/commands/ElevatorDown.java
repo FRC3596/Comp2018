@@ -25,7 +25,15 @@ public class ElevatorDown extends Command {
 
      // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.elevator.middleCheck();//||Robot.elevator.bottomCheck();
+    	if(Robot.elevator.topCheck() == true)
+    	{
+    		return false;
+    	}
+    	else
+    	{
+    		return true;
+    	}
+        
     }
 
     // Called once after isFinished returns true
