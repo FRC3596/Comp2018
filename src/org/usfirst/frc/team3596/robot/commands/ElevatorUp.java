@@ -24,13 +24,13 @@ public class ElevatorUp extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		if(Robot.elevator.bottomCheck() == true)
+		if(Robot.elevator.topCheck())
     	{
-    		return false;
+    		return true;
     	}
     	else
     	{
-    		return true;
+    		return false;
     	}
 	}
 
