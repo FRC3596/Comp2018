@@ -14,7 +14,7 @@ public class Elevator extends Subsystem {
 	DigitalInput bottom = new DigitalInput(1);
 	DigitalInput middle = new DigitalInput(2);
 	
-	SpeedControllerGroup elevatorMotor = new SpeedControllerGroup(new Spark(0), new Spark(1));
+	SpeedControllerGroup elevatorMotor = new SpeedControllerGroup(new Spark(3), new Spark(4));
 	
 
 
