@@ -1,8 +1,8 @@
 package org.usfirst.frc.team3596.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj.Spark;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -12,7 +12,7 @@ public class Conveyor extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	WPI_VictorSPX Conveyor = new WPI_VictorSPX(0);
+	Spark Conveyor = new Spark(0); 
 	
 	Spark RollerLeft = new Spark(1);
 	Spark RollerRight = new Spark(2);
