@@ -8,7 +8,6 @@
 package org.usfirst.frc.team3596.robot;
 
 import org.usfirst.frc.team3596.robot.subsystems.Conveyor;
-import org.usfirst.frc.team3596.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -24,7 +23,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static Drivetrain drivetrain;
 	public static OI m_oi;
 	public static Conveyor conveyor;
 
@@ -37,7 +35,6 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		drivetrain = new Drivetrain();
 		conveyor = new Conveyor();
 		m_oi = new OI();
 
@@ -128,7 +125,6 @@ public class Robot extends TimedRobot {
 	public void testPeriodic() {
 	}
 	public void log(){
-		drivetrain.log();
 		m_oi.log();
 	}
 }
