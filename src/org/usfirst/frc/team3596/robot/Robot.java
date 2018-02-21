@@ -10,8 +10,6 @@ package org.usfirst.frc.team3596.robot;
 import org.usfirst.frc.team3596.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team3596.robot.subsystems.Elevator;
 import org.usfirst.frc.team3596.robot.subsystems.Conveyor;
-
-
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -122,7 +120,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		log();
+		 log();
 	}
 
 	/**
