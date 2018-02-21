@@ -2,6 +2,9 @@ package org.usfirst.frc.team3596.robot;
 
 
 
+import org.usfirst.frc.team3596.robot.commands.ElevatorDown;
+import org.usfirst.frc.team3596.robot.commands.ElevatorStop;
+import org.usfirst.frc.team3596.robot.commands.ElevatorUp;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -26,14 +29,23 @@ public class OI {
 	JoystickButton START = new JoystickButton(joy, 10);
 	JoystickButton LSB = new JoystickButton(joy, 11);
 	JoystickButton RSB = new JoystickButton(joy, 12);
-	
+
 	double LEFT_X_AXIS = joy.getRawAxis(0);
 	double LEFT_Y_AXIS = joy.getRawAxis(1);
 	double RIGHT_X_AXIS = joy.getRawAxis(2);
 	double RIGHT_Y_AXIS = joy.getRawAxis(3);
 
+	boolean topTrigger = Robot.elevator.topCheck();
+	boolean bottomTrigger = Robot.elevator.bottomCheck();
 	public OI(){
 		// Put Command triggers Here
+
+		LB.whenActive(new ElevatorUp());
+		RB.whenActive(new ElevatorDown());
+
+		LB.whenInactive(new ElevatorStop());
+		RB.whenInactive(new ElevatorStop());
+
 	}
 
 	public Joystick getJoystick() {
@@ -54,12 +66,12 @@ public class OI {
 		SmartDashboard.putBoolean("START Button", START.get());
 		SmartDashboard.putBoolean("LSB Button", LSB.get());
 		SmartDashboard.putBoolean("RSB Button", RSB.get());
-		
+
 		SmartDashboard.putNumber("Left X Axis", LEFT_X_AXIS);
 		SmartDashboard.putNumber("Left Y Axis", LEFT_Y_AXIS);
 		SmartDashboard.putNumber("Right X Axis", RIGHT_X_AXIS);
 		SmartDashboard.putNumber("Right Y Axis", RIGHT_Y_AXIS);
-		
+
 
 
 	}
