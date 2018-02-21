@@ -5,6 +5,9 @@ package org.usfirst.frc.team3596.robot;
 import org.usfirst.frc.team3596.robot.commands.ElevatorDown;
 import org.usfirst.frc.team3596.robot.commands.ElevatorStop;
 import org.usfirst.frc.team3596.robot.commands.ElevatorUp;
+import org.usfirst.frc.team3596.robot.commands.ConveyorBkwd;
+import org.usfirst.frc.team3596.robot.commands.ConveyorFwd;
+import org.usfirst.frc.team3596.robot.commands.ConveyorStop;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -45,7 +48,12 @@ public class OI {
 
 		LB.whenInactive(new ElevatorStop());
 		RB.whenInactive(new ElevatorStop());
-
+		
+		B.whenActive(new ConveyorFwd());
+		B.whenInactive(new ConveyorStop());
+		
+		X.whenActive(new ConveyorBkwd());
+		X.whenInactive(new ConveyorStop());
 	}
 
 	public Joystick getJoystick() {

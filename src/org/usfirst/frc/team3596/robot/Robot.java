@@ -9,6 +9,8 @@ package org.usfirst.frc.team3596.robot;
 
 import org.usfirst.frc.team3596.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team3596.robot.subsystems.Elevator;
+import org.usfirst.frc.team3596.robot.subsystems.Conveyor;
+
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -27,6 +29,7 @@ public class Robot extends TimedRobot {
 	public static Drivetrain drivetrain;
 	public static Elevator elevator;
 	public static OI m_oi;
+	public static Conveyor conveyor;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -39,7 +42,9 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		drivetrain = new Drivetrain();
 		elevator = new Elevator();
+		conveyor = new Conveyor();
 		m_oi = new OI();
+
 	
 		//m_autonomousCommand = new Autonomous();
 		//SmartDashboard.putData("Auto mode", m_chooser);
