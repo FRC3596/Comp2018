@@ -10,9 +10,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class Elevator extends Subsystem {
-	DigitalInput top = new DigitalInput(0);
-	DigitalInput bottom = new DigitalInput(1);
-	DigitalInput middle = new DigitalInput(2);
+	DigitalInput top = new DigitalInput(4);
+	DigitalInput bottom = new DigitalInput(5);
+	DigitalInput middle = new DigitalInput(6);
 	
 	SpeedControllerGroup elevatorMotor = new SpeedControllerGroup(new Spark(3), new Spark(4));
 	
