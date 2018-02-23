@@ -9,6 +9,7 @@ package org.usfirst.frc.team3596.robot;
 
 import org.usfirst.frc.team3596.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team3596.robot.subsystems.Elevator;
+import org.usfirst.frc.team3596.robot.commands.Autonomous;
 import org.usfirst.frc.team3596.robot.subsystems.Conveyor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -28,8 +29,9 @@ public class Robot extends TimedRobot {
 	public static Elevator elevator;
 	public static OI m_oi;
 	public static Conveyor conveyor;
+	
 
-	Command m_autonomousCommand;
+	Command autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 
 	/**
@@ -38,13 +40,13 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
+		
 		drivetrain = new Drivetrain();
 		elevator = new Elevator();
 		conveyor = new Conveyor();
+		autonomousCommand = new Autonomous();
 		m_oi = new OI();
 
-	
-		//m_autonomousCommand = new Autonomous();
 		//SmartDashboard.putData("Auto mode", m_chooser);
 	}
 
@@ -77,7 +79,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void autonomousInit() {
 	//	m_autonomousCommand = m_chooser.getSelected();
-	//	m_autonomousCommand.start();
+		autonomousCommand.start();
 		
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -109,8 +111,8 @@ public class Robot extends TimedRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.cancel();
+		if (autonomousCommand != null) {
+			autonomousCommand.cancel();
 		}
 	}
 
