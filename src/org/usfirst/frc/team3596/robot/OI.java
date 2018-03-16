@@ -1,7 +1,6 @@
 package org.usfirst.frc.team3596.robot;
 
 
-
 import org.usfirst.frc.team3596.robot.commands.ElevatorDown;
 import org.usfirst.frc.team3596.robot.commands.ElevatorStop;
 import org.usfirst.frc.team3596.robot.commands.ElevatorUp;
@@ -49,11 +48,11 @@ public class OI {
 		LB.whenInactive(new ElevatorStop());
 		RB.whenInactive(new ElevatorStop());
 		
-		B.whenActive(new ConveyorFwd());
-		B.whenInactive(new ConveyorStop());
+		RSB.whenActive(new ConveyorFwd());
+		RSB.whenInactive(new ConveyorStop());
 		
-		X.whenActive(new ConveyorBkwd());
-		X.whenInactive(new ConveyorStop());
+		LSB.whenActive(new ConveyorBkwd());
+		LSB.whenInactive(new ConveyorStop());
 	}
 
 	public Joystick getJoystick() {
@@ -80,11 +79,5 @@ public class OI {
 		SmartDashboard.putNumber("Right X Axis", RIGHT_X_AXIS);
 		SmartDashboard.putNumber("Right Y Axis", RIGHT_Y_AXIS);
 
-
-
 	}
-
-
-
-
 }
