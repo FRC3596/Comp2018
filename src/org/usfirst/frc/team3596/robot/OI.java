@@ -7,6 +7,7 @@ import org.usfirst.frc.team3596.robot.commands.ElevatorUp;
 import org.usfirst.frc.team3596.robot.commands.ConveyorBkwd;
 import org.usfirst.frc.team3596.robot.commands.ConveyorFwd;
 import org.usfirst.frc.team3596.robot.commands.ConveyorStop;
+import org.usfirst.frc.team3596.robot.commands.Drive_Slow;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -18,6 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class OI {
 	private Joystick joy = new Joystick(0);
+	
 
 	JoystickButton X = new JoystickButton(joy, 1);
 	JoystickButton A = new JoystickButton(joy, 2);
@@ -48,11 +50,14 @@ public class OI {
 		LB.whenInactive(new ElevatorStop());
 		RB.whenInactive(new ElevatorStop());
 		
-		RSB.whenActive(new ConveyorFwd());
-		RSB.whenInactive(new ConveyorStop());
+		RT.whenActive(new ConveyorFwd());
+		RT.whenInactive(new ConveyorStop());
 		
-		LSB.whenActive(new ConveyorBkwd());
-		LSB.whenInactive(new ConveyorStop());
+		LT.whenActive(new ConveyorBkwd());
+		LT.whenInactive(new ConveyorStop());
+		
+		X.toggleWhenPressed(new Drive_Slow());
+		
 	}
 
 	public Joystick getJoystick() {

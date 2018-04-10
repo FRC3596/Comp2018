@@ -13,7 +13,7 @@ public class Autonomous extends CommandGroup {
         //      addSequential(new Command2());
         // these will run in order.
 
-    	addSequential(new GoForward(3));
+    	addSequential(new GoForward(4.5));
     	
     	
     	

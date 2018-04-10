@@ -15,7 +15,7 @@ public class GoForward extends TimedCommand {
 
     // Called just before this Command runs the first time
     protected void execute() {
-    	Robot.drivetrain.drive(0.5,0);
+    	Robot.drivetrain.drive(0.6,0.6);
     }
 
     // Called once after isFinished returns true

@@ -31,7 +31,7 @@ public class Elevator extends Subsystem {
 	}
 
 	public void ElevatorUpward(){
-		elevatorMotor.set(.5);
+		elevatorMotor.set(.60);
 	}
 
 	public void ElevatorStop(){
